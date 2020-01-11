@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import "../stylesheet/Pokemon.css";
 
 function Pokemon(props) {
@@ -19,5 +20,11 @@ function Pokemon(props) {
     </li>
   );
 }
+
+Pokemon.propTypes = {
+  image: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  info: PropTypes.array.isRequired
+};
 
 export default Pokemon;
