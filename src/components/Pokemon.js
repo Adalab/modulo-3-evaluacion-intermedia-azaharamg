@@ -3,9 +3,21 @@ import PropTypes from "prop-types";
 import "../stylesheet/Pokemon.css";
 
 function Pokemon(props) {
+  const handleFavorites = () => {
+    props.handleFavorites(props.id);
+  };
+
+  const addStylesToFavorites = () => {
+    if (props.favorites.includes(props.id)) {
+      return "item red";
+    } else {
+      return "item black";
+    }
+  };
+
   const descriptions = props.info;
   return (
-    <li className="item">
+    <li className={addStylesToFavorites()} onClick={handleFavorites}>
       <img className="item__image" src={props.image} alt={`imagen ${props.name}`} />
       <h3 className="item__title">{props.name}</h3>
       <ul className="descritpion__list">

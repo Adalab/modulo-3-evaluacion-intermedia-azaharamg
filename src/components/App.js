@@ -8,8 +8,24 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      data: data
+      data: data,
+      favorites: []
     };
+    this.handleFavorites = this.handleFavorites.bind(this);
+  }
+
+  handleFavorites(selectedPokemonId) {
+    this.setState(prevState => {
+      const pokemonIndex = prevState.favorites.findIndex(pokemonId => pokemonId === selectedPokemonId);
+      if (pokemonIndex < 0) {
+        prevState.favorites.push(selectedPokemonId);
+      } else {
+        prevState.favorites.splice(pokemonIndex, 1);
+      }
+      return {
+        favorites: prevState.favorites
+      };
+    });
   }
 
   render() {
@@ -18,7 +34,17 @@ class App extends React.Component {
         <h1 className="app__title">Mi lista de pokemon</h1>
         <PokeList>
           {this.state.data.map(item => {
-            return <Pokemon key={item.id} name={item.name} image={item.url} info={item.types} />;
+            return (
+              <Pokemon
+                key={item.id}
+                id={item.id}
+                name={item.name}
+                image={item.url}
+                info={item.types}
+                favorites={this.state.favorites}
+                handleFavorites={this.handleFavorites}
+              />
+            );
           })}
         </PokeList>
       </div>

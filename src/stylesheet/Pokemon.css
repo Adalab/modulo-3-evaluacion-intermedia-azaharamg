@@ -35,3 +35,11 @@
   text-transform: uppercase;
   font-size: 12px;
 }
+
+.red {
+  border: solid 5px red;
+}
+
+.black {
+  border: solid 5px black;
+}
