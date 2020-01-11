@@ -31,7 +31,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="app">
-        <h1 className="app__title">Mi lista de pokemon</h1>
+        <h1 className="app__title">Pokédex</h1>
         <PokeList>
           {this.state.data.map(item => {
             return (

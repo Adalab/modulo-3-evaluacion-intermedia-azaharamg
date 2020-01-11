@@ -4,7 +4,7 @@
   width: 200px;
   margin: 15px;
   text-align: center;
-  background-color: rgb(184, 221, 238);
+  background-color: rgba(185, 185, 185, 0.445);
 }
 
 .item__image {
@@ -13,8 +13,7 @@
 
 .item__title {
   text-transform: capitalize;
-  border-top: 2px solid rgb(128, 128, 128);
-  border-bottom: 2px solid rgb(128, 128, 128);
+  background-color: white;
   padding: 15px;
 }
 
@@ -28,18 +27,14 @@
 }
 
 .descritpion__item {
-  border: 2px solid rgb(128, 128, 128);
-  background-color: rgb(128, 128, 128);
-  border-radius: 35%;
+  background-color: rgba(255, 0, 0, 0.596);
+  border-radius: 15%;
   margin: 10px;
+  padding: 5px;
   text-transform: uppercase;
   font-size: 12px;
 }
 
-.red {
-  border: solid 5px red;
-}
-
-.black {
-  border: solid 5px black;
+.selected {
+  border: solid 5px rgba(255, 0, 0, 0.596);
 }

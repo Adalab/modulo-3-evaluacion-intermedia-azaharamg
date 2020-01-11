@@ -9,9 +9,9 @@ function Pokemon(props) {
 
   const addStylesToFavorites = () => {
     if (props.favorites.includes(props.id)) {
-      return "item red";
+      return "item selected";
     } else {
-      return "item black";
+      return "item";
     }
   };
 
